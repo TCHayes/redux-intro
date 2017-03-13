@@ -5,7 +5,6 @@ Different responses for:
   Within 30: Neutral
   Within 40: Cool
   Else: Cold
-
 */
 
 //random num generator
@@ -15,14 +14,14 @@ function getRandomIntInclusive(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-const ADD_GUESS = 'ADD_GUESS';
-const addGuess = number => ({
+export const ADD_GUESS = 'ADD_GUESS';
+export const addGuess = guess => ({
   type: ADD_GUESS,
-  number
+  guess
 });
 
-const NEW_GAME = 'NEW_GAME';
-const newGame = () => ({
+export const NEW_GAME = 'NEW_GAME';
+export const newGame = () => ({
   type: NEW_GAME,
   number: getRandomIntInclusive(1, 100)
 });
