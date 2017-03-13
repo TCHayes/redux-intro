@@ -2,7 +2,7 @@ import * as actions from '../actions/index';
 
 const initialGameState = {
   userGuess: [],
-  guessCount: 0
+  guessCounter: 0
 };
 
 export const gameReducer = (state=initialGameState, action) => {
@@ -11,7 +11,7 @@ export const gameReducer = (state=initialGameState, action) => {
   }
 
   else if (action.type === actions.ADD_GUESS) {
-    return {...state, userGuess: [...state.userGuess, action.guess], guessCount: state.guessCount+1};
+    return {...state, userGuess: [...state.userGuess, action.guess], guessCounter: state.guessCounter+1};
   }
   return state;
 }
